@@ -29,3 +29,33 @@ function isPalindrome(string) {
 
   return isPalindrome(string.slice(1, -1));
 }
+
+// Given an array and an index, write a recursive function to add up the elements of an array.
+
+ function addUpTo(array, idx) {
+  return idx ? array[idx] + addUpTo(array, idx - 1) : array[idx]
+ }
+
+
+// Write a recursive function to find the largest integer in an array.
+
+function maxOf(array) {
+  if (array.length === 1) {
+    return array[0]
+  } else {
+    return Math.max(array.pop(), maxOf(array))
+  }
+}
+
+// Write out a function to see if an array includes a given element
+
+function includesNumber(array, element) {
+  if (array.length > 0) {
+    if (array[0] === element) {
+      return true;
+    } else {
+      return includesNumber(array.slice(1), element)
+    }
+  }
+  return false;
+} 
